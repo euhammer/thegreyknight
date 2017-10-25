@@ -9,4 +9,5 @@ if target_val != 1 {
 	y -= global.grid_height * global.scale_factor
 	self.grid_y -= 1
 	depth += 1
+	image_index = 1
 }
