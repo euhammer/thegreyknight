@@ -5,10 +5,15 @@ global.scale_factor = 4;
 global.tile_size = 16;
 var column;
 for (column = 0; column < 50; column+=1) {
-	if (column % 3 == 0) {
-		ds_grid_add_region(global.map, column, 0, column, 10, 1);
-	} else {
-		ds_grid_add_region(global.map, column, 0, column, 49, 0);
+	var row;
+	for (row = 0; row < 50; row+=1) {
+		if (column % 3 == 0) {
+			if (row < 10) {
+				ds_grid_add(global.map, column, row, 1);
+			}
+		} else {
+			ds_grid_add_region(global.map, column, 0, column, 49, 0);
+		}
 	}
 }
 
